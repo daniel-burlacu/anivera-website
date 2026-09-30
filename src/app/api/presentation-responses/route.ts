@@ -3,10 +3,10 @@ import { randomUUID } from 'crypto';
 import { CASE_KEYS, CaseKey, canonicalPresentation } from '@/components/how-it-works/content';
 import { StoredAnswer, StoredResponse, saveResponse, storageTarget } from './storage';
 
-// Stored shape (in S3 or the local file, see ./storage):
+// One file per submission (in S3 or locally, see ./storage), shaped:
 // { users: { "<id>": { name, email, organisation, language, submittedAt,
-//     questions: { "question 1": { question, answer }, ... "question 10": {...} } } },
-//   vets: {...}, shelters: {...} }
+//     questions: { "question 1": { question, answer }, ... "question 10": {...} } } } }
+// with "vets" or "shelters" instead of "users" for the other cases.
 
 const clean = (value: unknown, max: number) => (typeof value === 'string' ? value.trim().slice(0, max) : '');
 
@@ -63,12 +63,13 @@ export async function POST(req: Request) {
   };
 
   const id = randomUUID();
+  let savedAt: string;
   try {
-    await saveResponse(caseKey, id, entry);
+    savedAt = await saveResponse(caseKey, id, entry);
   } catch (error) {
     console.error(`Could not save presentation response to ${storageTarget()}:`, error);
     return NextResponse.json({ success: false, message: 'Could not save the answers.' }, { status: 500 });
   }
 
-  return NextResponse.json({ success: true, id, savedTo: storageTarget().startsWith('s3://') ? 's3' : 'local' });
+  return NextResponse.json({ success: true, id, savedTo: savedAt.startsWith('s3://') ? 's3' : 'local' });
 }

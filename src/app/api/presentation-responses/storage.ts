@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { GetObjectCommand, PutObjectCommand, S3Client, S3ServiceException } from '@aws-sdk/client-s3';
+import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
 import type { CaseKey } from '@/components/how-it-works/content';
 
 export type StoredAnswer = { question: string; answer: string | string[] };
@@ -12,11 +12,11 @@ export type StoredResponse = {
   submittedAt: string;
   questions: Record<string, StoredAnswer>;
 };
-export type ResponsesFile = Record<CaseKey, Record<string, StoredResponse>>;
 
-const emptyFile = (): ResponsesFile => ({ users: {}, vets: {}, shelters: {} });
-
-// S3 is used when the S3 variables are set; otherwise answers go to a local JSON file.
+// Every submission is saved as its own file, e.g.
+//   presentation/responses/users/2026-09-30T20-50-57-123Z-anastasia-dashcovska-1a2b3c4d.json
+// holding { "users": { "<id>": { name, email, ... questions } } }.
+// S3 is used when the S3 variables are set; otherwise the files go to data/responses locally.
 // Read on every call so a .env created or changed while the server runs is picked up.
 // Vercel reserves AWS_REGION and AWS_SECRET_ACCESS_KEY for its own runtime, so the AWS_S3_* names
 // are preferred there; the plain AWS_* names still work locally.
@@ -35,7 +35,7 @@ function s3Config() {
   if (!AWS_S3_ACCESS_ID || !AWS_S3_SECRET_ACCESS_KEY || !AWS_S3_REGION || !AWS_S3_BUCKET) return null;
   return {
     bucket: AWS_S3_BUCKET,
-    key: process.env.AWS_S3_KEY || 'presentation/presentation-responses.json',
+    prefix: (process.env.AWS_S3_PREFIX || 'presentation/responses').replace(/\/+$/, ''),
     client: new S3Client({
       region: AWS_S3_REGION,
       credentials: { accessKeyId: AWS_S3_ACCESS_ID, secretAccessKey: AWS_S3_SECRET_ACCESS_KEY },
@@ -43,75 +43,53 @@ function s3Config() {
   };
 }
 
-const localFile = () => process.env.PRESENTATION_RESPONSES_FILE || path.join(process.cwd(), 'data', 'presentation-responses.json');
+const localDir = () => process.env.PRESENTATION_RESPONSES_DIR || path.join(process.cwd(), 'data', 'responses');
 
 export function storageTarget() {
   const s3 = s3Config();
-  return s3 ? `s3://${s3.bucket}/${s3.key}` : localFile();
+  return s3 ? `s3://${s3.bucket}/${s3.prefix}/` : localDir();
 }
 
-async function addToS3(s3: NonNullable<ReturnType<typeof s3Config>>, caseKey: CaseKey, id: string, entry: StoredResponse) {
-  // Read, add, write back only if nobody else wrote in between (S3 conditional write); retry on conflict.
-  for (let attempt = 0; attempt < 5; attempt++) {
-    let data = emptyFile();
-    let etag: string | undefined;
-    try {
-      const res = await s3.client.send(new GetObjectCommand({ Bucket: s3.bucket, Key: s3.key }));
-      data = { ...data, ...JSON.parse(await res.Body!.transformToString('utf-8')) };
-      etag = res.ETag;
-    } catch (error) {
-      if (!(error instanceof S3ServiceException && error.name === 'NoSuchKey')) throw error;
-    }
-
-    data[caseKey][id] = entry;
-    try {
-      await s3.client.send(
-        new PutObjectCommand({
-          Bucket: s3.bucket,
-          Key: s3.key,
-          Body: JSON.stringify(data, null, 2),
-          ContentType: 'application/json',
-          ServerSideEncryption: 'AES256',
-          ...(etag ? { IfMatch: etag } : { IfNoneMatch: '*' }),
-        })
-      );
-      return;
-    } catch (error) {
-      const status = error instanceof S3ServiceException ? error.$metadata.httpStatusCode : undefined;
-      if (status !== 412 && status !== 409) throw error;
-      await new Promise((resolve) => setTimeout(resolve, 100 * (attempt + 1)));
-    }
-  }
-  throw new Error('S3 object kept changing; answers not saved.');
+function fileName(id: string, entry: StoredResponse) {
+  const time = entry.submittedAt.replace(/[:.]/g, '-');
+  const slug = entry.name
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 40);
+  return `${time}-${slug || 'anonymous'}-${id.slice(0, 8)}.json`;
 }
 
-// Serialize local writes so two submissions at the same time cannot overwrite each other.
-let localQueue: Promise<unknown> = Promise.resolve();
+export async function saveResponse(caseKey: CaseKey, id: string, entry: StoredResponse): Promise<string> {
+  const name = fileName(id, entry);
+  const body = JSON.stringify({ [caseKey]: { [id]: entry } }, null, 2);
 
-async function addToLocalFile(caseKey: CaseKey, id: string, entry: StoredResponse) {
-  const LOCAL_FILE = localFile();
-  let data = emptyFile();
-  try {
-    data = { ...data, ...JSON.parse(await fs.readFile(LOCAL_FILE, 'utf8')) };
-  } catch (error) {
-    if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error;
-  }
-  data[caseKey][id] = entry;
-  await fs.mkdir(path.dirname(LOCAL_FILE), { recursive: true });
-  const tmp = `${LOCAL_FILE}.tmp`;
-  await fs.writeFile(tmp, JSON.stringify(data, null, 2), 'utf8');
-  await fs.rename(tmp, LOCAL_FILE);
-}
-
-export async function saveResponse(caseKey: CaseKey, id: string, entry: StoredResponse) {
   const s3 = s3Config();
-  if (s3) return addToS3(s3, caseKey, id, entry);
+  if (s3) {
+    const key = `${s3.prefix}/${caseKey}/${name}`;
+    await s3.client.send(
+      new PutObjectCommand({
+        Bucket: s3.bucket,
+        Key: key,
+        Body: body,
+        ContentType: 'application/json',
+        ServerSideEncryption: 'AES256',
+        IfNoneMatch: '*', // never overwrite an existing submission
+      })
+    );
+    return `s3://${s3.bucket}/${key}`;
+  }
+
   if (process.env.VERCEL) {
     // Vercel's file system is read-only, so a local file cannot work there.
     const missing = Object.entries(s3Settings()).filter(([, v]) => !v).map(([k]) => k);
     throw new Error(`S3 is not configured on Vercel; missing: ${missing.join(', ')}`);
   }
-  const write = localQueue.then(() => addToLocalFile(caseKey, id, entry));
-  localQueue = write.catch(() => undefined);
-  return write;
+
+  const file = path.join(localDir(), caseKey, name);
+  await fs.mkdir(path.dirname(file), { recursive: true });
+  await fs.writeFile(file, body, { encoding: 'utf8', flag: 'wx' });
+  return file;
 }
