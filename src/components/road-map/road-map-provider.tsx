@@ -2,9 +2,11 @@
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext';
 
-type PhaseStatus = 'done' | 'current' | 'upcoming';
+type PhaseStatus = 'done' | 'current' | 'upcoming' | 'open';
 
+// end 'open': the phase has no end date (fundraising stays open until its goal is reached).
 function phaseStatus(start: string, end: string): PhaseStatus {
+  if (end === 'open') return 'open';
   const now = Date.now();
   const startMs = new Date(`${start}T00:00:00`).getTime();
   const endMs = new Date(`${end}T23:59:59`).getTime();
@@ -34,7 +36,7 @@ export const RoadMapProvider: React.FC = () => {
       description: t.roadmap.step2Description,
       icon: '💼',
       start: '2025-01-12',
-      end: '2026-09-30',
+      end: 'open',
     },
     {
       title: t.roadmap.step3Title,
@@ -63,6 +65,7 @@ export const RoadMapProvider: React.FC = () => {
     done: t.roadmap.statusComplete,
     current: t.roadmap.statusCurrent,
     upcoming: t.roadmap.statusUpcoming,
+    open: t.roadmap.statusOpen,
   };
 
   return (
@@ -111,7 +114,7 @@ export const RoadMapProvider: React.FC = () => {
                       className={`text-xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full ${
                         status === 'done'
                           ? 'bg-anivera-line text-anivera-ink'
-                          : status === 'current'
+                          : status === 'current' || status === 'open'
                             ? 'bg-anivera-aiSoft text-anivera-ai'
                             : 'bg-anivera-soft text-anivera-body'
                       }`}
