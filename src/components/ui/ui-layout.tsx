@@ -17,9 +17,9 @@ export function UiLayout({ children }: { children: ReactNode }) {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-anivera-bg">
       {/* Fixed TabMenu */}
-      <TabMenu links={links} />
+      <TabMenu links={links} cta={{ label: t.nav.sponsor, path: '/#sponsors' }} />
 
       {/* Content Below Fixed Menu */}
       <div className="w-full flex-1 flex flex-col">
@@ -35,12 +35,12 @@ export function UiLayout({ children }: { children: ReactNode }) {
         </Suspense>
       </div>
 
-      <footer className="footer footer-center mt-auto p-4 bg-gradient-to-r from-green-900 via-green-800 to-green-700 text-white">
-        <aside>
+      <footer className="mt-auto border-t border-anivera-line bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-anivera-body">
           <p>
-            @2025 Created by{' '}
+            © 2026 Anivera · Created by{' '}
             <a
-              className="link hover:text-white"
+              className="font-semibold text-anivera-ink hover:underline underline-offset-4"
               href="https://github.com/daniel-burlacu"
               target="_blank"
               rel="noopener noreferrer"
@@ -48,7 +48,11 @@ export function UiLayout({ children }: { children: ReactNode }) {
               Daniel Burlacu
             </a>
           </p>
-        </aside>
+          <p>
+            <span className="text-anivera-muted">{t.contactUs.emailLabel}:</span>{' '}
+            <span className="font-semibold text-anivera-ink">contact at anivera dot xyz</span>
+          </p>
+        </div>
       </footer>
     </div>
   );
@@ -117,7 +121,7 @@ export function AppHero({
     <div className="hero py-[24px]">
       <div className="hero-content text-center">
         <div className="max-w-2xl">
-          {typeof title === 'string' ? <h1 className="text-5xl font-bold">{title}</h1> : title}
+          {typeof title === 'string' ? <h1 className="text-5xl font-bold tracking-tight text-anivera-ink">{title}</h1> : title}
           {typeof subtitle === 'string' ? <p className="py-6">{subtitle}</p> : subtitle}
           {children}
         </div>

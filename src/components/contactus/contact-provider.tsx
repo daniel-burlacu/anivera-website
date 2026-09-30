@@ -6,17 +6,12 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const links = [
   {
     labelKey: 'linkedinLabel' as const,
-    value: 'Daniel Burlacu',
-    href: 'https://www.linkedin.com/in/daniel-burlacu-3879a689/',
+    value: 'Anivera',
+    href: 'https://www.linkedin.com/company/anivera-xyz/',
   },
   {
-    labelKey: 'discordLabel' as const,
-    value: 'daniel.burlacu',
-  },
-  {
-    labelKey: 'websiteLabel' as const,
-    value: 'danielburlacu.xyz',
-    href: 'https://danielburlacu.xyz',
+    labelKey: 'emailLabel' as const,
+    value: 'contact at anivera dot xyz',
   },
 ];
 
@@ -24,9 +19,9 @@ export default function ContactProvider() {
   const { t } = useLanguage();
 
   return (
-    <div className="bg-gradient-to-r from-green-800 via-green-600 to-green-700 flex flex-1 flex-col items-center py-6 sm:py-10 px-4 sm:px-6">
+    <div className="bg-anivera-bg flex flex-1 flex-col items-center py-6 sm:py-10 px-4 sm:px-6">
       <motion.h1
-        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 text-center"
+        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-anivera-ink mb-3 text-center"
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
@@ -34,7 +29,7 @@ export default function ContactProvider() {
         {t.contactUs.title}
       </motion.h1>
       <motion.p
-        className="text-emerald-50/90 text-sm sm:text-base md:text-lg max-w-2xl text-center mb-6 sm:mb-8 leading-relaxed"
+        className="text-anivera-body text-sm sm:text-base md:text-lg max-w-2xl text-center mb-6 sm:mb-8 leading-relaxed"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7, delay: 0.1 }}
@@ -43,14 +38,14 @@ export default function ContactProvider() {
       </motion.p>
 
       <motion.ul
-        className="w-full max-w-xl bg-white rounded-lg shadow-md divide-y divide-gray-100"
+        className="w-full max-w-xl bg-white rounded-2xl border border-anivera-line shadow-[0_12px_32px_-24px_rgba(12,74,69,0.45)] divide-y divide-anivera-line"
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.15 }}
       >
         {links.map((item) => (
           <li key={item.labelKey} className="p-4 sm:p-6">
-            <p className="text-xs sm:text-sm uppercase tracking-wide text-green-700 font-semibold">
+            <p className="text-xs sm:text-sm uppercase tracking-wider text-anivera-ai font-semibold">
               {t.contactUs[item.labelKey]}
             </p>
             {item.href ? (
@@ -58,12 +53,12 @@ export default function ContactProvider() {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-1 inline-block text-base sm:text-lg text-gray-800 font-medium underline decoration-green-700/40 underline-offset-4 hover:text-green-800"
+                className="mt-1 inline-block text-base sm:text-lg text-anivera-ink font-medium underline decoration-anivera-ai/40 underline-offset-4 hover:text-anivera-ai"
               >
                 {item.value}
               </a>
             ) : (
-              <p className="mt-1 text-base sm:text-lg text-gray-800 font-medium">{item.value}</p>
+              <p className="mt-1 text-base sm:text-lg text-anivera-ink font-medium">{item.value}</p>
             )}
           </li>
         ))}

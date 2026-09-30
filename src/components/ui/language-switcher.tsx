@@ -26,7 +26,7 @@ export function LanguageSwitcher() {
     <div className="relative inline-block">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="px-3 py-2 bg-white text-gray-800 hover:bg-gray-100 border border-gray-300 rounded-lg flex items-center gap-2"
+        className="px-3 py-2 bg-white text-anivera-ink hover:bg-anivera-bg border border-[#5F8C87] rounded-full flex items-center gap-2"
         title="Select Language"
       >
         <span className="font-semibold text-sm">{currentLanguage.displayCode}</span>
@@ -39,7 +39,7 @@ export function LanguageSwitcher() {
             className="fixed inset-0 z-30"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute top-full right-0 mt-2 w-56 bg-white border border-gray-300 rounded-lg shadow-lg z-40">
+          <div className="absolute top-full right-0 mt-2 w-56 bg-white border border-anivera-line rounded-xl shadow-lg z-40">
             <div className="p-2">
               {LANGUAGES.map(lang => {
                 return (
@@ -51,8 +51,8 @@ export function LanguageSwitcher() {
                     }}
                     className={`w-full text-left px-3 py-2 rounded-md transition-colors flex items-center gap-2 ${
                       language === lang.code
-                        ? 'bg-green-700 text-white'
-                        : 'hover:bg-gray-100 text-gray-900'
+                        ? 'bg-anivera-ink text-white'
+                        : 'hover:bg-anivera-bg text-anivera-ink'
                     }`}
                     title={lang.name}
                   >
@@ -82,7 +82,7 @@ export function LanguageSwitcherMobile() {
     <div className="relative inline-block">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="px-2 py-1 bg-white text-gray-800 hover:bg-gray-100 border border-gray-300 rounded-lg flex items-center gap-1 text-xs"
+        className="px-2.5 py-1.5 bg-white text-anivera-ink hover:bg-anivera-bg border border-[#5F8C87] rounded-full flex items-center gap-1 text-xs"
         title="Select Language"
       >
         <span className="font-semibold">{currentLanguage.displayCode}</span>
@@ -95,7 +95,7 @@ export function LanguageSwitcherMobile() {
             className="fixed inset-0 z-30"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute top-full right-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg z-40">
+          <div className="absolute top-full right-0 mt-2 w-48 bg-white border border-anivera-line rounded-xl shadow-lg z-40">
             <div className="p-2">
               {LANGUAGES.map(lang => {
                 return (
@@ -107,8 +107,8 @@ export function LanguageSwitcherMobile() {
                     }}
                     className={`w-full text-left px-2 py-1 rounded-md transition-colors flex items-center gap-1 text-sm ${
                       language === lang.code
-                        ? 'bg-green-700 text-white'
-                        : 'hover:bg-gray-100 text-gray-900'
+                        ? 'bg-anivera-ink text-white'
+                        : 'hover:bg-anivera-bg text-anivera-ink'
                     }`}
                     title={lang.name}
                   >

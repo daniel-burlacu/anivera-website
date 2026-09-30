@@ -1,104 +1,84 @@
 'use client';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import logo from '../../../public/SAFLogo.png';
 import { useLanguage } from '@/contexts/LanguageContext';
+import AniveraUniverse from './anivera-universe';
+import SponsorsSection from './sponsors-section';
 
-const ENTITIES = [
-  { src: '/entities/shelters.png', key: 'entityShelters' as const },
-  { src: '/entities/vets.png', key: 'entityVets' as const },
-  { src: '/entities/hospitals.png', key: 'entityHospitals' as const },
-  { src: '/entities/owners.png', key: 'entityOwners' as const },
-  { src: '/entities/pharma.png', key: 'entityPharma' as const },
-  { src: '/entities/food.png', key: 'entityFood' as const },
-  { src: '/entities/insurance.png', key: 'entityInsurance' as const },
-];
+const fadeUp = {
+  hidden: { opacity: 0, y: 12 },
+  show: (i: number) => ({ opacity: 1, y: 0, transition: { duration: 0.5, delay: i * 0.08 } }),
+};
 
 export default function DashboardFeature() {
   const { t } = useLanguage();
 
   return (
-    <div className="universe-page relative overflow-hidden flex flex-col px-3 sm:px-6 py-6 sm:py-10">
-      <div className="universe-stars" aria-hidden="true" />
+    <>
+      <section className="bg-anivera-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-10 sm:py-14 lg:py-16 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] xl:grid-cols-[minmax(0,1fr)_minmax(0,584px)] lg:gap-12 lg:items-center">
+          <div className="flex flex-col items-start text-left">
+            <motion.p className="ai-pill mb-6" variants={fadeUp} initial="hidden" animate="show" custom={0}>
+              {t.general.aiUniverseLabel}
+            </motion.p>
 
-      <div className="relative z-10 flex flex-col items-center text-center max-w-5xl mx-auto w-full">
-        <motion.p
-          className="ai-pill mb-4"
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          {t.general.aiUniverseLabel}
-        </motion.p>
+            <motion.h1
+              className="text-5xl sm:text-6xl font-bold tracking-tight text-anivera-ink"
+              variants={fadeUp}
+              initial="hidden"
+              animate="show"
+              custom={1}
+            >
+              {t.general.brandName}
+            </motion.h1>
 
-        <motion.h1
-          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 via-green-300 to-teal-200 mb-2"
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          {t.general.brandName}
-        </motion.h1>
+            <motion.p
+              className="mt-3 text-2xl sm:text-3xl font-bold leading-tight text-anivera-ai max-w-xl"
+              variants={fadeUp}
+              initial="hidden"
+              animate="show"
+              custom={2}
+            >
+              {t.general.tagline}
+            </motion.p>
 
-        <motion.p
-          className="text-sm sm:text-lg md:text-2xl font-medium text-emerald-100/90 max-w-3xl px-2 mb-2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.15 }}
-        >
-          {t.general.tagline}
-        </motion.p>
+            <motion.p
+              className="mt-5 text-base sm:text-lg leading-relaxed text-anivera-body max-w-xl"
+              variants={fadeUp}
+              initial="hidden"
+              animate="show"
+              custom={3}
+            >
+              {t.general.universeIntro}
+            </motion.p>
 
-        <div className="universe" role="img" aria-label={t.general.universeAria}>
-          <div className="universe-glow" />
-          <div className="universe-ring universe-ring-outer" />
-          <div className="universe-ring universe-ring-inner" />
-
-          <div className="universe-core">
-            <motion.img
-              alt="ANIVERA"
-              src={logo.src}
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-            />
-          </div>
-
-          <div className="universe-orbit">
-            {ENTITIES.map((entity, index) => (
-              <div
-                key={entity.key}
-                className="satellite"
-                style={{ ['--i' as string]: index }}
+            <motion.div
+              className="mt-7 flex flex-wrap gap-3"
+              variants={fadeUp}
+              initial="hidden"
+              animate="show"
+              custom={4}
+            >
+              <Link
+                href="#sponsors"
+                className="inline-flex items-center justify-center rounded-xl bg-anivera-ink px-6 py-3.5 text-sm font-semibold text-white hover:bg-anivera-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-anivera-ai focus-visible:ring-offset-2"
               >
-                <div className="satellite-face">
-                  <div className="satellite-bob" style={{ animationDelay: `${index * 0.35}s` }}>
-                    <img src={entity.src} alt="" />
-                    <span className="satellite-label">{t.general[entity.key]}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
+                {t.nav.sponsor}
+              </Link>
+              <Link
+                href="/application"
+                className="inline-flex items-center justify-center rounded-xl border-[1.5px] border-anivera-ink bg-white px-6 py-3.5 text-sm font-semibold text-anivera-ink hover:bg-anivera-bg focus:outline-none focus-visible:ring-2 focus-visible:ring-anivera-ai focus-visible:ring-offset-2"
+              >
+                {t.sponsors.heroSecondary}
+              </Link>
+            </motion.div>
           </div>
+
+          <AniveraUniverse />
         </div>
+      </section>
 
-        <ul className="satellite-legend">
-          {ENTITIES.map((entity) => (
-            <li key={entity.key}>
-              <img src={entity.src} alt="" />
-              <span>{t.general[entity.key]}</span>
-            </li>
-          ))}
-        </ul>
-
-        <motion.p
-          className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-emerald-50/85 max-w-3xl leading-relaxed px-1"
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
-          {t.general.universeIntro}
-        </motion.p>
-      </div>
-    </div>
+      <SponsorsSection />
+    </>
   );
 }

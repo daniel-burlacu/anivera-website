@@ -8,7 +8,8 @@ export const translations = {
       aboutUs: "About-Us",
       architecture: "Architecture",
       applicationDemo: "Application-Demo",
-      contactUs: "Contact-Me",
+      contactUs: "Contact-Us",
+      sponsor: "Become a sponsor",
     },
 
     // General
@@ -136,7 +137,7 @@ export const translations = {
       campaignsText: "Sponsored sales campaigns (€5k–€20k each).",
       joinJourney: "Join Us on the Journey",
       journeyDescription: "Building the global animal health data backbone, valuable for industries, life-changing for pets.",
-      contactUs: "Contact Me",
+      contactUs: "Contact Us",
     },
 
     // Architecture Page
@@ -164,11 +165,40 @@ export const translations = {
 
     // Contact Us Page
     contactUs: {
-      title: "Contact Me",
-      intro: "Reach Daniel directly.",
+      title: "Contact Us",
+      intro: "Reach the ANIVERA team.",
       linkedinLabel: "LinkedIn",
-      discordLabel: "Discord",
       websiteLabel: "Personal page",
+      emailLabel: "Email",
+    },
+
+    // Home universe animation
+    universe: {
+      exampleNote: "Example activity, not live data",
+      pause: "Pause animation",
+      play: "Play animation",
+      taskMedical: "Case summary ready for the vet",
+      taskWellbeing: "Enrichment routine suggested",
+      taskNutrition: "Diet plan drafted",
+      taskTrainer: "Training steps updated",
+      taskFrontDesk: "Visit booked · Thu 16:00",
+      taskOperations: "Food order placed",
+      taskAccounting: "Monthly costs summarised",
+    },
+
+    // Sponsors section
+    sponsors: {
+      eyebrow: "Sponsors",
+      title: "Support our journey. Become an early sponsor.",
+      intro: "ANIVERA is building one AI universe for animal care. Early sponsors help us bring the finished application to veterinarians, shelters and animal owners, and their logo stands here from day one.",
+      awsBadge: "Startup programme",
+      awsTitle: "Part of AWS Startups",
+      awsText: "ANIVERA is part of AWS Startups. We build our AI agents on Amazon Web Services.",
+      slotLabel: "Your logo here",
+      ctaTitle: "Become an early sponsor",
+      ctaText: "Tell us about your company and we will send you the sponsorship details.",
+      emailCta: "Email us",
+      heroSecondary: "Meet the AI agents",
     },
   },
 
@@ -181,7 +211,8 @@ export const translations = {
       aboutUs: "Sobre Nosotros",
       architecture: "Arquitectura",
       applicationDemo: "Demo de Aplicación",
-      contactUs: "Contáctame",
+      contactUs: "Contáctanos",
+      sponsor: "Hazte patrocinador",
     },
 
     // General
@@ -309,7 +340,7 @@ export const translations = {
       campaignsText: "Campañas de ventas patrocinadas (€5k–€20k cada una).",
       joinJourney: "Únete al Viaje",
       journeyDescription: "Construyendo la columna vertebral de datos de salud animal global, valiosa para industrias, que cambia vidas para mascotas.",
-      contactUs: "Contáctame",
+      contactUs: "Contáctanos",
     },
 
     // About Us Page
@@ -331,11 +362,40 @@ export const translations = {
 
     // Contact Us Page
     contactUs: {
-      title: "Contáctame",
-      intro: "Contacta con Daniel directamente.",
+      title: "Contáctanos",
+      intro: "Contacta con el equipo de ANIVERA.",
       linkedinLabel: "LinkedIn",
-      discordLabel: "Discord",
       websiteLabel: "Página personal",
+      emailLabel: "Correo electrónico",
+    },
+
+    // Home universe animation
+    universe: {
+      exampleNote: "Actividad de ejemplo, no son datos en vivo",
+      pause: "Pausar animación",
+      play: "Reproducir animación",
+      taskMedical: "Resumen del caso listo para el veterinario",
+      taskWellbeing: "Rutina de enriquecimiento sugerida",
+      taskNutrition: "Plan de dieta preparado",
+      taskTrainer: "Pasos de entrenamiento actualizados",
+      taskFrontDesk: "Visita reservada · jue 16:00",
+      taskOperations: "Pedido de comida realizado",
+      taskAccounting: "Costes mensuales resumidos",
+    },
+
+    // Sponsors section
+    sponsors: {
+      eyebrow: "Patrocinadores",
+      title: "Apoya nuestro camino. Hazte patrocinador desde el principio.",
+      intro: "ANIVERA está construyendo un universo de IA para el cuidado animal. Los primeros patrocinadores nos ayudan a llevar la aplicación terminada a veterinarios, refugios y dueños de animales, y su logotipo aparece aquí desde el primer día.",
+      awsBadge: "Programa para startups",
+      awsTitle: "Parte de AWS Startups",
+      awsText: "ANIVERA forma parte de AWS Startups. Construimos nuestros agentes de IA sobre Amazon Web Services.",
+      slotLabel: "Tu logotipo aquí",
+      ctaTitle: "Hazte patrocinador",
+      ctaText: "Cuéntanos sobre tu empresa y te enviaremos los detalles del patrocinio.",
+      emailCta: "Escríbenos",
+      heroSecondary: "Conoce a los agentes de IA",
     },
 
     // Architecture Page
@@ -354,7 +414,8 @@ export const translations = {
       aboutUs: "Über uns",
       architecture: "Architektur",
       applicationDemo: "Anwendungs-Demo",
-      contactUs: "Kontaktiere-mich",
+      contactUs: "Kontakt",
+      sponsor: "Sponsor werden",
     },
 
     // General
@@ -482,7 +543,7 @@ export const translations = {
       campaignsText: "Gesponserte Verkaufskampagnen (€5k–€20k jeweils).",
       joinJourney: "Begleiten Sie uns auf der Reise",
       journeyDescription: "Aufbau des globalen Tiergesundheitsdaten-Rückgrats, wertvoll für Industrien, lebensverändernd für Haustiere.",
-      contactUs: "Kontaktieren Sie mich",
+      contactUs: "Kontaktieren Sie uns",
     },
 
     // About Us Page
@@ -504,11 +565,40 @@ export const translations = {
 
     // Contact Us Page
     contactUs: {
-      title: "Kontaktieren Sie mich",
-      intro: "Erreichen Sie Daniel direkt.",
+      title: "Kontaktieren Sie uns",
+      intro: "Erreichen Sie das ANIVERA-Team.",
       linkedinLabel: "LinkedIn",
-      discordLabel: "Discord",
       websiteLabel: "Persönliche Seite",
+      emailLabel: "E-Mail",
+    },
+
+    // Home universe animation
+    universe: {
+      exampleNote: "Beispielaktivität, keine Live-Daten",
+      pause: "Animation pausieren",
+      play: "Animation abspielen",
+      taskMedical: "Fallzusammenfassung für den Tierarzt bereit",
+      taskWellbeing: "Beschäftigungsroutine vorgeschlagen",
+      taskNutrition: "Ernährungsplan entworfen",
+      taskTrainer: "Trainingsschritte aktualisiert",
+      taskFrontDesk: "Termin gebucht · Do 16:00",
+      taskOperations: "Futterbestellung aufgegeben",
+      taskAccounting: "Monatskosten zusammengefasst",
+    },
+
+    // Sponsors section
+    sponsors: {
+      eyebrow: "Sponsoren",
+      title: "Unterstützen Sie unseren Weg. Werden Sie früher Sponsor.",
+      intro: "ANIVERA baut ein KI-Universum für die Tierversorgung. Frühe Sponsoren helfen uns, die fertige Anwendung zu Tierärzten, Tierheimen und Tierhaltern zu bringen, und ihr Logo steht vom ersten Tag an hier.",
+      awsBadge: "Startup-Programm",
+      awsTitle: "Teil von AWS Startups",
+      awsText: "ANIVERA ist Teil von AWS Startups. Wir bauen unsere KI-Agenten auf Amazon Web Services.",
+      slotLabel: "Ihr Logo hier",
+      ctaTitle: "Früher Sponsor werden",
+      ctaText: "Erzählen Sie uns von Ihrem Unternehmen, und wir senden Ihnen die Details zum Sponsoring.",
+      emailCta: "E-Mail schreiben",
+      heroSecondary: "Die KI-Agenten kennenlernen",
     },
 
     // Architecture Page
@@ -527,7 +617,8 @@ export const translations = {
       aboutUs: "Sobre Nós",
       architecture: "Arquitetura",
       applicationDemo: "Demo da Aplicação",
-      contactUs: "Contacte-me",
+      contactUs: "Contacte-nos",
+      sponsor: "Seja patrocinador",
     },
 
     // General
@@ -655,7 +746,7 @@ export const translations = {
       campaignsText: "Campanhas de vendas patrocinadas (€5k–€20k cada).",
       joinJourney: "Junte-se a Nós na Jornada",
       journeyDescription: "Construindo a coluna vertebral de dados de saúde animal global, valiosa para indústrias, transformadora para animais de estimação.",
-      contactUs: "Contacte-me",
+      contactUs: "Contacte-nos",
     },
 
     // About Us Page
@@ -677,11 +768,40 @@ export const translations = {
 
     // Contact Us Page
     contactUs: {
-      title: "Contacte-me",
-      intro: "Fale diretamente com o Daniel.",
+      title: "Contacte-nos",
+      intro: "Fale com a equipa ANIVERA.",
       linkedinLabel: "LinkedIn",
-      discordLabel: "Discord",
       websiteLabel: "Página pessoal",
+      emailLabel: "E-mail",
+    },
+
+    // Home universe animation
+    universe: {
+      exampleNote: "Atividade de exemplo, não são dados em tempo real",
+      pause: "Pausar animação",
+      play: "Reproduzir animação",
+      taskMedical: "Resumo do caso pronto para o veterinário",
+      taskWellbeing: "Rotina de enriquecimento sugerida",
+      taskNutrition: "Plano alimentar preparado",
+      taskTrainer: "Passos de treino atualizados",
+      taskFrontDesk: "Consulta marcada · qui 16:00",
+      taskOperations: "Encomenda de ração feita",
+      taskAccounting: "Custos mensais resumidos",
+    },
+
+    // Sponsors section
+    sponsors: {
+      eyebrow: "Patrocinadores",
+      title: "Apoie a nossa jornada. Torne-se um dos primeiros patrocinadores.",
+      intro: "A ANIVERA está a construir um universo de IA para o cuidado animal. Os primeiros patrocinadores ajudam-nos a levar a aplicação final a veterinários, abrigos e tutores de animais, e o seu logótipo aparece aqui desde o primeiro dia.",
+      awsBadge: "Programa para startups",
+      awsTitle: "Parte do AWS Startups",
+      awsText: "A ANIVERA faz parte do AWS Startups. Construímos os nossos agentes de IA na Amazon Web Services.",
+      slotLabel: "O seu logótipo aqui",
+      ctaTitle: "Torne-se patrocinador",
+      ctaText: "Fale-nos da sua empresa e enviamos-lhe os detalhes do patrocínio.",
+      emailCta: "Envie-nos um e-mail",
+      heroSecondary: "Conheça os agentes de IA",
     },
 
     // Architecture Page
@@ -700,7 +820,8 @@ export const translations = {
       aboutUs: "À Propos",
       architecture: "Architecture",
       applicationDemo: "Démo d'Application",
-      contactUs: "Me contacter",
+      contactUs: "Nous contacter",
+      sponsor: "Devenir sponsor",
     },
 
     // General
@@ -828,7 +949,7 @@ export const translations = {
       campaignsText: "Campagnes de ventes sponsorisées (€5k–€20k chacun).",
       joinJourney: "Rejoignez-nous dans le Voyage",
       journeyDescription: "Construire l'épine dorsale des données de santé animale mondiale, précieuse pour les industries, transformatrice pour les animaux de compagnie.",
-      contactUs: "Me contacter",
+      contactUs: "Nous contacter",
     },
 
     // About Us Page
@@ -850,11 +971,40 @@ export const translations = {
 
     // Contact Us Page
     contactUs: {
-      title: "Me contacter",
-      intro: "Contactez Daniel directement.",
+      title: "Nous contacter",
+      intro: "Contactez l'équipe ANIVERA.",
       linkedinLabel: "LinkedIn",
-      discordLabel: "Discord",
       websiteLabel: "Page personnelle",
+      emailLabel: "E-mail",
+    },
+
+    // Home universe animation
+    universe: {
+      exampleNote: "Activité d'exemple, pas de données en direct",
+      pause: "Mettre l'animation en pause",
+      play: "Lancer l'animation",
+      taskMedical: "Résumé du cas prêt pour le vétérinaire",
+      taskWellbeing: "Routine d'enrichissement proposée",
+      taskNutrition: "Plan alimentaire préparé",
+      taskTrainer: "Étapes d'éducation mises à jour",
+      taskFrontDesk: "Visite réservée · jeu. 16:00",
+      taskOperations: "Commande de nourriture passée",
+      taskAccounting: "Coûts mensuels résumés",
+    },
+
+    // Sponsors section
+    sponsors: {
+      eyebrow: "Sponsors",
+      title: "Soutenez notre aventure. Devenez l'un de nos premiers sponsors.",
+      intro: "ANIVERA construit un univers d'IA pour le soin animal. Les premiers sponsors nous aident à apporter l'application finale aux vétérinaires, aux refuges et aux propriétaires d'animaux, et leur logo figure ici dès le premier jour.",
+      awsBadge: "Programme startups",
+      awsTitle: "Membre d'AWS Startups",
+      awsText: "ANIVERA fait partie d'AWS Startups. Nous construisons nos agents d'IA sur Amazon Web Services.",
+      slotLabel: "Votre logo ici",
+      ctaTitle: "Devenir sponsor",
+      ctaText: "Parlez-nous de votre entreprise et nous vous enverrons les détails du parrainage.",
+      emailCta: "Nous écrire",
+      heroSecondary: "Découvrir les agents d'IA",
     },
 
     // Architecture Page
@@ -873,7 +1023,8 @@ export const translations = {
       aboutUs: "Despre Noi",
       architecture: "Arhitectură",
       applicationDemo: "Demo Aplicație",
-      contactUs: "Contactează-mă",
+      contactUs: "Contactează-ne",
+      sponsor: "Devino sponsor",
     },
 
     // General
@@ -1001,7 +1152,7 @@ export const translations = {
       campaignsText: "Campaniile de vânzări sponsorizate (€5k–€20k fiecare).",
       joinJourney: "Alătură-te Nouă în Călătorie",
       journeyDescription: "Construind coloana vertebrală a datelor globale de sănătate animală, valoroasă pentru industrii, transformatoare pentru animalele de companie.",
-      contactUs: "Contactează-mă",
+      contactUs: "Contactează-ne",
     },
 
     // About Us Page
@@ -1023,11 +1174,40 @@ export const translations = {
 
     // Contact Us Page
     contactUs: {
-      title: "Contactează-mă",
-      intro: "Ia legătura direct cu Daniel.",
+      title: "Contactează-ne",
+      intro: "Ia legătura cu echipa ANIVERA.",
       linkedinLabel: "LinkedIn",
-      discordLabel: "Discord",
       websiteLabel: "Pagina personală",
+      emailLabel: "E-mail",
+    },
+
+    // Home universe animation
+    universe: {
+      exampleNote: "Activitate de exemplu, nu date în timp real",
+      pause: "Pune animația pe pauză",
+      play: "Pornește animația",
+      taskMedical: "Rezumatul cazului e gata pentru medic",
+      taskWellbeing: "Rutină de îmbogățire sugerată",
+      taskNutrition: "Plan de dietă pregătit",
+      taskTrainer: "Pașii de dresaj actualizați",
+      taskFrontDesk: "Vizită programată · joi 16:00",
+      taskOperations: "Comandă de hrană plasată",
+      taskAccounting: "Costuri lunare rezumate",
+    },
+
+    // Sponsors section
+    sponsors: {
+      eyebrow: "Sponsori",
+      title: "Susține-ne în drumul nostru. Devino unul dintre primii noștri sponsori.",
+      intro: "ANIVERA construiește un univers AI pentru îngrijirea animalelor. Primii sponsori ne ajută să aducem aplicația finală la medicii veterinari, adăposturi și proprietarii de animale, iar logo-ul lor apare aici din prima zi.",
+      awsBadge: "Program pentru startup-uri",
+      awsTitle: "Parte din AWS Startups",
+      awsText: "ANIVERA face parte din AWS Startups. Ne construim agenții AI pe Amazon Web Services.",
+      slotLabel: "Logo-ul tău aici",
+      ctaTitle: "Devino sponsor",
+      ctaText: "Spune-ne despre compania ta și îți trimitem detaliile de sponsorizare.",
+      emailCta: "Scrie-ne",
+      heroSecondary: "Cunoaște agenții AI",
     },
 
     // Architecture Page
@@ -1046,7 +1226,8 @@ export const translations = {
       aboutUs: "Chi Siamo",
       architecture: "Architettura",
       applicationDemo: "Demo Applicazione",
-      contactUs: "Contattami",
+      contactUs: "Contattaci",
+      sponsor: "Diventa sponsor",
     },
 
     // General
@@ -1174,7 +1355,7 @@ export const translations = {
       campaignsText: "Campagne di vendita sponsorizzate (€5k–€20k ciascuna).",
       joinJourney: "Unisciti a Noi nel Viaggio",
       journeyDescription: "Costruendo la spina dorsale dei dati sanitari degli animali globale, preziosa per le industrie, trasformativa per gli animali domestici.",
-      contactUs: "Contattami",
+      contactUs: "Contattaci",
     },
 
     // About Us Page
@@ -1196,11 +1377,40 @@ export const translations = {
 
     // Contact Us Page
     contactUs: {
-      title: "Contattami",
-      intro: "Contatta Daniel direttamente.",
+      title: "Contattaci",
+      intro: "Contatta il team di ANIVERA.",
       linkedinLabel: "LinkedIn",
-      discordLabel: "Discord",
       websiteLabel: "Pagina personale",
+      emailLabel: "E-mail",
+    },
+
+    // Home universe animation
+    universe: {
+      exampleNote: "Attività di esempio, non dati in tempo reale",
+      pause: "Metti in pausa l'animazione",
+      play: "Avvia l'animazione",
+      taskMedical: "Riepilogo del caso pronto per il veterinario",
+      taskWellbeing: "Routine di arricchimento suggerita",
+      taskNutrition: "Piano alimentare preparato",
+      taskTrainer: "Passi di addestramento aggiornati",
+      taskFrontDesk: "Visita prenotata · gio 16:00",
+      taskOperations: "Ordine di cibo effettuato",
+      taskAccounting: "Costi mensili riassunti",
+    },
+
+    // Sponsors section
+    sponsors: {
+      eyebrow: "Sponsor",
+      title: "Sostieni il nostro percorso. Diventa uno dei nostri primi sponsor.",
+      intro: "ANIVERA sta costruendo un universo di IA per la cura degli animali. I primi sponsor ci aiutano a portare l'applicazione finita a veterinari, rifugi e proprietari di animali, e il loro logo è qui fin dal primo giorno.",
+      awsBadge: "Programma per startup",
+      awsTitle: "Parte di AWS Startups",
+      awsText: "ANIVERA fa parte di AWS Startups. Costruiamo i nostri agenti di IA su Amazon Web Services.",
+      slotLabel: "Il tuo logo qui",
+      ctaTitle: "Diventa sponsor",
+      ctaText: "Raccontaci della tua azienda e ti invieremo i dettagli della sponsorizzazione.",
+      emailCta: "Scrivici",
+      heroSecondary: "Scopri gli agenti di IA",
     },
 
     // Architecture Page
@@ -1220,6 +1430,7 @@ export const translations = {
       architecture: "Arkkitehtuuri",
       applicationDemo: "Sovellustestiajo",
       contactUs: "Ota yhteyttä",
+      sponsor: "Ryhdy sponsoriksi",
     },
 
     // General
@@ -1370,10 +1581,39 @@ export const translations = {
     // Contact Us Page
     contactUs: {
       title: "Ota yhteyttä",
-      intro: "Tavoitat Danielin suoraan.",
+      intro: "Tavoita ANIVERA-tiimi.",
       linkedinLabel: "LinkedIn",
-      discordLabel: "Discord",
       websiteLabel: "Henkilökohtainen sivu",
+      emailLabel: "Sähköposti",
+    },
+
+    // Home universe animation
+    universe: {
+      exampleNote: "Esimerkkitoimintaa, ei reaaliaikaista dataa",
+      pause: "Keskeytä animaatio",
+      play: "Toista animaatio",
+      taskMedical: "Tapausyhteenveto valmis eläinlääkärille",
+      taskWellbeing: "Virikerutiini ehdotettu",
+      taskNutrition: "Ruokavaliosuunnitelma laadittu",
+      taskTrainer: "Koulutusvaiheet päivitetty",
+      taskFrontDesk: "Käynti varattu · to 16:00",
+      taskOperations: "Ruokatilaus tehty",
+      taskAccounting: "Kuukauden kulut koottu",
+    },
+
+    // Sponsors section
+    sponsors: {
+      eyebrow: "Sponsorit",
+      title: "Tue matkaamme. Ryhdy yhdeksi ensimmäisistä sponsoreistamme.",
+      intro: "ANIVERA rakentaa tekoälyuniversumia eläinten hoitoon. Varhaiset sponsorit auttavat meitä tuomaan valmiin sovelluksen eläinlääkäreille, eläinsuojille ja eläinten omistajille, ja heidän logonsa näkyy täällä ensimmäisestä päivästä alkaen.",
+      awsBadge: "Startup-ohjelma",
+      awsTitle: "Osa AWS Startupsia",
+      awsText: "ANIVERA on osa AWS Startups -ohjelmaa. Rakennamme tekoälyagenttimme Amazon Web Servicesin varaan.",
+      slotLabel: "Logosi tähän",
+      ctaTitle: "Ryhdy sponsoriksi",
+      ctaText: "Kerro meille yrityksestäsi, niin lähetämme sponsoroinnin tiedot.",
+      emailCta: "Lähetä sähköpostia",
+      heroSecondary: "Tutustu tekoälyagentteihin",
     },
 
     // Architecture Page
@@ -1393,7 +1633,8 @@ export const translations = {
       aboutUs: "Om-Oss",
       architecture: "Arkitektur",
       applicationDemo: "App-Demo",
-      contactUs: "Kontakta-mig",
+      contactUs: "Kontakta-oss",
+      sponsor: "Bli sponsor",
     },
 
     // General
@@ -1521,7 +1762,7 @@ export const translations = {
       campaignsText: "Sponsrade försäljningskampanjer (€5k–€20k var).",
       joinJourney: "Gå Med på Resan",
       journeyDescription: "Bygga ett globalt husdjurshälsodatanät, värdefullt för industrin, transformativt för husdjur.",
-      contactUs: "Kontakta mig",
+      contactUs: "Kontakta oss",
     },
 
     // About Us Page
@@ -1543,11 +1784,40 @@ export const translations = {
 
     // Contact Us Page
     contactUs: {
-      title: "Kontakta mig",
-      intro: "Nå Daniel direkt.",
+      title: "Kontakta oss",
+      intro: "Nå ANIVERA-teamet.",
       linkedinLabel: "LinkedIn",
-      discordLabel: "Discord",
       websiteLabel: "Personlig sida",
+      emailLabel: "E-post",
+    },
+
+    // Home universe animation
+    universe: {
+      exampleNote: "Exempelaktivitet, inte livedata",
+      pause: "Pausa animationen",
+      play: "Spela upp animationen",
+      taskMedical: "Fallsammanfattning klar för veterinären",
+      taskWellbeing: "Berikningsrutin föreslagen",
+      taskNutrition: "Kostplan utarbetad",
+      taskTrainer: "Träningssteg uppdaterade",
+      taskFrontDesk: "Besök bokat · tors 16:00",
+      taskOperations: "Foderbeställning lagd",
+      taskAccounting: "Månadens kostnader sammanfattade",
+    },
+
+    // Sponsors section
+    sponsors: {
+      eyebrow: "Sponsorer",
+      title: "Stöd vår resa. Bli en av våra första sponsorer.",
+      intro: "ANIVERA bygger ett AI-universum för djurvård. Tidiga sponsorer hjälper oss att ta den färdiga applikationen till veterinärer, djurhem och djurägare, och deras logotyp syns här från första dagen.",
+      awsBadge: "Startupprogram",
+      awsTitle: "Del av AWS Startups",
+      awsText: "ANIVERA är en del av AWS Startups. Vi bygger våra AI-agenter på Amazon Web Services.",
+      slotLabel: "Din logotyp här",
+      ctaTitle: "Bli sponsor",
+      ctaText: "Berätta om ditt företag så skickar vi information om sponsringen.",
+      emailCta: "Mejla oss",
+      heroSecondary: "Möt AI-agenterna",
     },
 
     // Architecture Page
