@@ -1,4 +1,8 @@
 .env
 .env.local
+.env.example
 node_modules/
 .next/
+
+# Presentation answers (personal data)
+/data/

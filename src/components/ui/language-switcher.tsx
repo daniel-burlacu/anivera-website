@@ -14,6 +14,7 @@ const LANGUAGES: { code: Language; name: string; displayCode: string; countryCod
   { code: 'ro', name: 'Română', displayCode: 'RO', countryCode: 'RO' },
   { code: 'it', name: 'Italiano', displayCode: 'IT', countryCode: 'IT' },
   { code: 'fi', name: 'Suomi', displayCode: 'FI', countryCode: 'FI' },
+  { code: 'sv', name: 'Svenska', displayCode: 'SE', countryCode: 'SE' },
 ];
 
 export function LanguageSwitcher() {

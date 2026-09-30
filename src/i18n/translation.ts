@@ -10,6 +10,7 @@ export const translations = {
       applicationDemo: "Application-Demo",
       contactUs: "Contact-Us",
       sponsor: "Become a sponsor",
+      howItWorks: "How it works",
     },
 
     // General
@@ -214,6 +215,7 @@ export const translations = {
       applicationDemo: "Demo de Aplicación",
       contactUs: "Contáctanos",
       sponsor: "Hazte patrocinador",
+      howItWorks: "Cómo funciona",
     },
 
     // General
@@ -418,6 +420,7 @@ export const translations = {
       applicationDemo: "Anwendungs-Demo",
       contactUs: "Kontakt",
       sponsor: "Sponsor werden",
+      howItWorks: "So funktioniert's",
     },
 
     // General
@@ -622,6 +625,7 @@ export const translations = {
       applicationDemo: "Demo da Aplicação",
       contactUs: "Contacte-nos",
       sponsor: "Seja patrocinador",
+      howItWorks: "Como funciona",
     },
 
     // General
@@ -826,6 +830,7 @@ export const translations = {
       applicationDemo: "Démo d'Application",
       contactUs: "Nous contacter",
       sponsor: "Devenir sponsor",
+      howItWorks: "Comment ça marche",
     },
 
     // General
@@ -1030,6 +1035,7 @@ export const translations = {
       applicationDemo: "Demo Aplicație",
       contactUs: "Contactează-ne",
       sponsor: "Devino sponsor",
+      howItWorks: "Cum funcționează",
     },
 
     // General
@@ -1234,6 +1240,7 @@ export const translations = {
       applicationDemo: "Demo Applicazione",
       contactUs: "Contattaci",
       sponsor: "Diventa sponsor",
+      howItWorks: "Come funziona",
     },
 
     // General
@@ -1438,6 +1445,7 @@ export const translations = {
       applicationDemo: "Sovellustestiajo",
       contactUs: "Ota yhteyttä",
       sponsor: "Ryhdy sponsoriksi",
+      howItWorks: "Näin se toimii",
     },
 
     // General
@@ -1643,6 +1651,7 @@ export const translations = {
       applicationDemo: "App-Demo",
       contactUs: "Kontakta-oss",
       sponsor: "Bli sponsor",
+      howItWorks: "Så fungerar det",
     },
 
     // General

@@ -10,6 +10,7 @@ export function UiLayout({ children }: { children: ReactNode }) {
   const links = [
     { label: t.nav.home, path: '/home' },
     { label: t.nav.project, path: '/project' },
+    { label: t.nav.howItWorks, path: '/how-it-works' },
     { label: t.nav.roadmap, path: '/roadmap' },
     { label: t.nav.aboutUs, path: '/aboutus' },
     { label: t.nav.applicationDemo, path: '/application' },
