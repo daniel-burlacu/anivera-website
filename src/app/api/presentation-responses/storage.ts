@@ -16,17 +16,29 @@ export type ResponsesFile = Record<CaseKey, Record<string, StoredResponse>>;
 
 const emptyFile = (): ResponsesFile => ({ users: {}, vets: {}, shelters: {} });
 
-// S3 is used when all four S3 variables are set; otherwise answers go to a local JSON file.
+// S3 is used when the S3 variables are set; otherwise answers go to a local JSON file.
 // Read on every call so a .env created or changed while the server runs is picked up.
+// Vercel reserves AWS_REGION and AWS_SECRET_ACCESS_KEY for its own runtime, so the AWS_S3_* names
+// are preferred there; the plain AWS_* names still work locally.
+function s3Settings() {
+  const env = process.env;
+  return {
+    AWS_S3_ACCESS_ID: env.AWS_S3_ACCESS_ID,
+    AWS_S3_SECRET_ACCESS_KEY: env.AWS_S3_SECRET_ACCESS_KEY || env.AWS_SECRET_ACCESS_KEY,
+    AWS_S3_REGION: env.AWS_S3_REGION || env.AWS_REGION,
+    AWS_S3_BUCKET: env.AWS_S3_BUCKET,
+  };
+}
+
 function s3Config() {
-  const { AWS_S3_ACCESS_ID, AWS_SECRET_ACCESS_KEY, AWS_S3_REGION, AWS_S3_BUCKET } = process.env;
-  if (!AWS_S3_ACCESS_ID || !AWS_SECRET_ACCESS_KEY || !AWS_S3_REGION || !AWS_S3_BUCKET) return null;
+  const { AWS_S3_ACCESS_ID, AWS_S3_SECRET_ACCESS_KEY, AWS_S3_REGION, AWS_S3_BUCKET } = s3Settings();
+  if (!AWS_S3_ACCESS_ID || !AWS_S3_SECRET_ACCESS_KEY || !AWS_S3_REGION || !AWS_S3_BUCKET) return null;
   return {
     bucket: AWS_S3_BUCKET,
     key: process.env.AWS_S3_KEY || 'presentation/presentation-responses.json',
     client: new S3Client({
       region: AWS_S3_REGION,
-      credentials: { accessKeyId: AWS_S3_ACCESS_ID, secretAccessKey: AWS_SECRET_ACCESS_KEY },
+      credentials: { accessKeyId: AWS_S3_ACCESS_ID, secretAccessKey: AWS_S3_SECRET_ACCESS_KEY },
     }),
   };
 }
@@ -94,6 +106,11 @@ async function addToLocalFile(caseKey: CaseKey, id: string, entry: StoredRespons
 export async function saveResponse(caseKey: CaseKey, id: string, entry: StoredResponse) {
   const s3 = s3Config();
   if (s3) return addToS3(s3, caseKey, id, entry);
+  if (process.env.VERCEL) {
+    // Vercel's file system is read-only, so a local file cannot work there.
+    const missing = Object.entries(s3Settings()).filter(([, v]) => !v).map(([k]) => k);
+    throw new Error(`S3 is not configured on Vercel; missing: ${missing.join(', ')}`);
+  }
   const write = localQueue.then(() => addToLocalFile(caseKey, id, entry));
   localQueue = write.catch(() => undefined);
   return write;
