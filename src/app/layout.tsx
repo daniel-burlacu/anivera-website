@@ -9,13 +9,9 @@ export const metadata = {
   title: 'Anivera',
   description: 'ANIVERA is an AI universe for veterinary teams and animal care.',
   icons: {
-    icon: [
-      { url: '/SAFLogo.png' },
-      { url: '/SAFLogo.png', sizes: '32x32', type: 'image/png' },
-      { url: '/SAFLogo.png', sizes: '16x16', type: 'image/png' },
-    ],
+    icon: [{ url: '/SAFLogo.ico', sizes: '32x32', type: 'image/x-icon' }],
+    shortcut: '/SAFLogo.ico',
     apple: '/SAFLogo.png',
-    shortcut: '/SAFLogo.png',
   },
 }
 

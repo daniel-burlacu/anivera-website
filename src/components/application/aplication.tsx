@@ -4,91 +4,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import bedrockLogo from "../../../public/bedrock.png";
-
-function AgentGrid({
-  agents,
-}: {
-  agents: { icon: string; title: string; subtitle: string; description: string }[];
-}) {
-  return (
-    <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-      {agents.map((agent, index) => (
-        <motion.article
-          key={agent.title}
-          className="bg-white rounded-2xl border border-anivera-line shadow-[0_12px_32px_-24px_rgba(12,74,69,0.45)] p-4 sm:p-6 w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.45, delay: index * 0.06 }}
-        >
-          <div className="text-3xl mb-2" aria-hidden="true">{agent.icon}</div>
-          <h3 className="text-lg sm:text-xl font-semibold text-anivera-ink">{agent.title}</h3>
-          <p className="text-xs sm:text-sm uppercase tracking-wider text-anivera-ai font-semibold mt-1 mb-2">
-            {agent.subtitle}
-          </p>
-          <p className="text-sm sm:text-base text-anivera-body leading-relaxed">{agent.description}</p>
-        </motion.article>
-      ))}
-    </div>
-  );
-}
+import AgentsSection from "./agents-section";
 
 export default function InvestorPresentation() {
   const { t } = useLanguage();
-
-  const careAgents = [
-    {
-      icon: "🩺",
-      title: t.application.doctorTitle,
-      subtitle: t.application.doctorSubtitle,
-      description: t.application.doctorDescription,
-    },
-    {
-      icon: "💚",
-      title: t.application.wellbeingTitle,
-      subtitle: t.application.wellbeingSubtitle,
-      description: t.application.wellbeingDescription,
-    },
-    {
-      icon: "🥗",
-      title: t.application.nutritionistTitle,
-      subtitle: t.application.nutritionistSubtitle,
-      description: t.application.nutritionistDescription,
-    },
-    {
-      icon: "🎓",
-      title: t.application.trainerTitle,
-      subtitle: t.application.trainerSubtitle,
-      description: t.application.trainerDescription,
-    },
-    {
-      icon: "💬",
-      title: t.application.supportTitle,
-      subtitle: t.application.supportSubtitle,
-      description: t.application.supportDescription,
-    },
-  ];
-
-  const departmentAgents = [
-    {
-      icon: "🗓️",
-      title: t.application.frontDeskTitle,
-      subtitle: t.application.frontDeskSubtitle,
-      description: t.application.frontDeskDescription,
-    },
-    {
-      icon: "📦",
-      title: t.application.operationsTitle,
-      subtitle: t.application.operationsSubtitle,
-      description: t.application.operationsDescription,
-    },
-    {
-      icon: "📒",
-      title: t.application.accountingTitle,
-      subtitle: t.application.accountingSubtitle,
-      description: t.application.accountingDescription,
-    },
-  ];
 
   const business = [
     { icon: "🐾", title: t.application.clinicsTitle, text: t.application.clinicsText },
@@ -151,30 +70,7 @@ export default function InvestorPresentation() {
         </a>
       </div>
 
-      <div className="w-full max-w-5xl mb-8">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-anivera-ink text-center mb-2">
-          {t.application.aiAgentsTitle}
-        </h2>
-        <p className="text-anivera-body text-center text-sm sm:text-base mb-8 max-w-3xl mx-auto">
-          {t.application.aiAgentsSubtitle}
-        </p>
-
-        <h3 className="text-xl sm:text-2xl font-semibold text-anivera-ink text-center mb-2">
-          {t.application.careTitle}
-        </h3>
-        <p className="text-anivera-body text-center text-sm sm:text-base mb-4 max-w-3xl mx-auto">
-          {t.application.careSubtitle}
-        </p>
-        <AgentGrid agents={careAgents} />
-
-        <h3 className="text-xl sm:text-2xl font-semibold text-anivera-ink text-center mt-8 mb-2">
-          {t.application.departmentTitle}
-        </h3>
-        <p className="text-anivera-body text-center text-sm sm:text-base mb-4 max-w-3xl mx-auto">
-          {t.application.departmentSubtitle}
-        </p>
-        <AgentGrid agents={departmentAgents} />
-      </div>
+      <AgentsSection />
 
       <div className="w-full max-w-5xl mb-8">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-anivera-ink text-center mb-6">
