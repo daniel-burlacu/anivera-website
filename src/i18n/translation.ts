@@ -202,6 +202,15 @@ export const translations = {
       emailCta: "Email us",
       heroSecondary: "Meet the AI agents",
     },
+
+    // Collaborators section
+    collaborators: {
+      eyebrow: "Collaborators",
+      title: "Our collaborators",
+      intro: "ANIVERA is built together with the people who care for animals every day. These are our collaborators.",
+      shelterRole: "Animal shelter",
+      clinicRole: "Veterinary clinic",
+    },
   },
 
   es: {
@@ -400,6 +409,15 @@ export const translations = {
       ctaText: "Cuéntanos sobre tu empresa y te enviaremos los detalles del patrocinio.",
       emailCta: "Escríbenos",
       heroSecondary: "Conoce a los agentes de IA",
+    },
+
+    // Collaborators section
+    collaborators: {
+      eyebrow: "Colaboradores",
+      title: "Nuestros colaboradores",
+      intro: "ANIVERA se construye junto a las personas que cuidan de los animales cada día. Estos son nuestros colaboradores.",
+      shelterRole: "Protectora de animales",
+      clinicRole: "Clínica veterinaria",
     },
 
     // Architecture Page
@@ -607,6 +625,15 @@ export const translations = {
       heroSecondary: "Die KI-Agenten kennenlernen",
     },
 
+    // Collaborators section
+    collaborators: {
+      eyebrow: "Kooperationspartner",
+      title: "Unsere Kooperationspartner",
+      intro: "ANIVERA entsteht gemeinsam mit den Menschen, die sich jeden Tag um Tiere kümmern. Das sind unsere Kooperationspartner.",
+      shelterRole: "Tierheim",
+      clinicRole: "Tierarztpraxis",
+    },
+
     // Architecture Page
     architecture: {
       title: "Architekturdokumentation",
@@ -810,6 +837,15 @@ export const translations = {
       ctaText: "Fale-nos da sua empresa e enviamos-lhe os detalhes do patrocínio.",
       emailCta: "Envie-nos um e-mail",
       heroSecondary: "Conheça os agentes de IA",
+    },
+
+    // Collaborators section
+    collaborators: {
+      eyebrow: "Colaboradores",
+      title: "Os nossos colaboradores",
+      intro: "A ANIVERA é construída em conjunto com as pessoas que cuidam dos animais todos os dias. Estes são os nossos colaboradores.",
+      shelterRole: "Abrigo de animais",
+      clinicRole: "Clínica veterinária",
     },
 
     // Architecture Page
@@ -1017,6 +1053,15 @@ export const translations = {
       heroSecondary: "Découvrir les agents d'IA",
     },
 
+    // Collaborators section
+    collaborators: {
+      eyebrow: "Collaborateurs",
+      title: "Nos collaborateurs",
+      intro: "ANIVERA se construit avec les personnes qui prennent soin des animaux au quotidien. Voici nos collaborateurs.",
+      shelterRole: "Refuge pour animaux",
+      clinicRole: "Clinique vétérinaire",
+    },
+
     // Architecture Page
     architecture: {
       title: "Documentation d'Architecture",
@@ -1220,6 +1265,15 @@ export const translations = {
       ctaText: "Spune-ne despre compania ta și îți trimitem detaliile de sponsorizare.",
       emailCta: "Scrie-ne",
       heroSecondary: "Cunoaște agenții AI",
+    },
+
+    // Collaborators section
+    collaborators: {
+      eyebrow: "Colaboratori",
+      title: "Colaboratorii noștri",
+      intro: "ANIVERA se construiește împreună cu oamenii care au grijă de animale în fiecare zi. Aceștia sunt colaboratorii noștri.",
+      shelterRole: "Adăpost de animale",
+      clinicRole: "Clinică veterinară",
     },
 
     // Architecture Page
@@ -1427,6 +1481,15 @@ export const translations = {
       heroSecondary: "Scopri gli agenti di IA",
     },
 
+    // Collaborators section
+    collaborators: {
+      eyebrow: "Collaboratori",
+      title: "I nostri collaboratori",
+      intro: "ANIVERA nasce insieme alle persone che si prendono cura degli animali ogni giorno. Questi sono i nostri collaboratori.",
+      shelterRole: "Rifugio per animali",
+      clinicRole: "Clinica veterinaria",
+    },
+
     // Architecture Page
     architecture: {
       title: "Documentazione Architettura",
@@ -1630,6 +1693,15 @@ export const translations = {
       ctaText: "Kerro meille yrityksestäsi, niin lähetämme sponsoroinnin tiedot.",
       emailCta: "Lähetä sähköpostia",
       heroSecondary: "Tutustu tekoälyagentteihin",
+    },
+
+    // Collaborators section
+    collaborators: {
+      eyebrow: "Yhteistyökumppanit",
+      title: "Yhteistyökumppanimme",
+      intro: "ANIVERA rakennetaan yhdessä niiden ihmisten kanssa, jotka pitävät eläimistä huolta joka päivä. Nämä ovat yhteistyökumppanimme.",
+      shelterRole: "Eläinten turvakoti",
+      clinicRole: "Eläinlääkäriasema",
     },
 
     // Architecture Page
@@ -1836,6 +1908,15 @@ export const translations = {
       ctaText: "Berätta om ditt företag så skickar vi information om sponsringen.",
       emailCta: "Mejla oss",
       heroSecondary: "Möt AI-agenterna",
+    },
+
+    // Collaborators section
+    collaborators: {
+      eyebrow: "Samarbetspartner",
+      title: "Våra samarbetspartner",
+      intro: "ANIVERA byggs tillsammans med de människor som tar hand om djur varje dag. Det här är våra samarbetspartner.",
+      shelterRole: "Djurhem",
+      clinicRole: "Veterinärklinik",
     },
 
     // Architecture Page
