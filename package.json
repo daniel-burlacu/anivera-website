@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build:lambda": "esbuild lambda/handler.ts --bundle --platform=node --target=node22 --format=cjs --external:@aws-sdk/* --outfile=dist/lambda/index.js && cd dist/lambda && rm -f ../website-api.zip && zip -q ../website-api.zip index.js",
+    "test:lambda": "esbuild lambda/handler.test.ts --bundle --platform=node --target=node22 --format=cjs --external:@aws-sdk/* --outfile=dist/lambda-test.js && node --test dist/lambda-test.js",
+    "build:aws": "npm run test:lambda && next build && npm run build:lambda"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1144.0",
@@ -30,6 +33,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-google-recaptcha": "^2.1.9",
+    "esbuild": "^0.28.2",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.3.6",
     "postcss": "^8",

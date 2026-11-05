@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import AniveraUniverse from './anivera-universe';
 import SponsorsSection from './sponsors-section';
+import CollaboratorsSection from './collaborators-section';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 12 },
@@ -79,6 +80,7 @@ export default function DashboardFeature() {
       </section>
 
       <SponsorsSection />
+      <CollaboratorsSection />
     </>
   );
 }

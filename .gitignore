@@ -6,3 +6,7 @@ node_modules/
 
 # Presentation answers (personal data)
 /data/
+
+# Static export and Lambda bundle
+/out/
+/dist/

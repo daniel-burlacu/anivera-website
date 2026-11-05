@@ -5,7 +5,7 @@
 // prefers-reduced-motion bring the time scale to 0.
 import { AnimatePresence, motion, useAnimationFrame } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-import logo from '../../../public/SAFLogo.png';
+import logo from '../../../public/AniveraLogo.png';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 // Scene coordinates match the Penpot universe panel (584 × 600).

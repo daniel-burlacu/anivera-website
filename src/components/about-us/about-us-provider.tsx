@@ -22,7 +22,7 @@ export const AboutUsProvider: React.FC = () => {
         },
         {
           name: 'Daniel Burlacu',
-          link: 'https://www.linkedin.com/in/daniel-burlacu-3879a689/',
+          link: 'https://www.linkedin.com/in/daniel-burlacu/',
           description: t.aboutUs.danielDescription,
         },
       ],
