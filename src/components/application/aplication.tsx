@@ -35,7 +35,7 @@ export default function InvestorPresentation() {
       </motion.p>
 
       <a
-        href="https://develop.d1ir61rx2rh3k4.amplifyapp.com/"
+        href="https://staging.anivera.xyz/"
         target="_blank"
         rel="noopener noreferrer"
         className="mb-8 inline-flex items-center justify-center bg-anivera-ink text-white font-semibold px-6 py-3.5 rounded-xl hover:bg-anivera-deep transition-colors text-sm sm:text-base"
